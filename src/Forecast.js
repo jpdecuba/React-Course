@@ -24,9 +24,11 @@ class Forecast extends Component {
         super(props);
         this.state = {
             forecastData: [],
+            test2: {sys: {
+                
+            }},
             loading: true
         }
-
         this.makeRequest = this.makeRequest.bind(this);
         this.handleClick = this.handleClick.bind(this);
     }
@@ -54,6 +56,8 @@ class Forecast extends Component {
                     }
                 })
             }.bind(this))
+        this.test(city);
+
     }
     handleClick(city) {
         city.city = this.city;
@@ -62,12 +66,31 @@ class Forecast extends Component {
             state: city,
         })
     }
+
+    test(city) {
+        this.setState(function () {
+            return {
+                loading: true
+            }
+        })
+
+        api.getCurrentWeather(city)
+            .then(function (res) {
+                console.log(res);
+                this.setState(function () {
+                    return {
+                        loading: false,
+                        test2: res,
+                    }
+                })
+            }.bind(this))
+    }
     render() {
         return this.state.loading === true
             ? <h1 className='forecast-header'> Loading </h1>
             : <div>
                 <Card>
-                    <CardHeader title={this.city}>
+                    <CardHeader title={this.state.test2.name} subheader={this.state.test2.sys.country}>
                     </CardHeader>
 
                     <CardContent>
