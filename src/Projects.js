@@ -1,25 +1,17 @@
 import React, { Component } from 'react';
-import Api from './API/api';
+import Forecast from './Forecast';
 import { withStyles } from 'material-ui/styles';
 
-console.log(Api.getCurrentWeather('Tilburg'));
-
 class Projects extends Component {
-    constructor(props, context) {
-      super(props, context);
-  
-      this.state = {
-        open: false,
-      };
+    constructor(props) {
+        super(props);
     }
-  
     render() {
-      const { classes } = this.props;
-  
-      return (
-        <div>test</div>
-      );
-    }
-  }
+        return(
+        <div>
+              test
+            </div>)
+      }
+}
 
 export default Projects;
