@@ -1,14 +1,9 @@
 import React from 'react';
 import { render } from 'react-dom';
 import Main from './Main';
+import Projects from './Projects';
 import Navbar from './navbar';
 import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
-
-const Projects = () => (
-    <div>
-        test
-    </div>
-);
 
 const NotFoundPage = () => (
     <div>
@@ -29,6 +24,4 @@ const routes = (
     </BrowserRouter>
 );
 
-// Render the main app react component into the app div.
-// For more details see: https://facebook.github.io/react/docs/top-level-api.html#react.render
 render(routes, document.getElementById('app'));
