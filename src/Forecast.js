@@ -8,6 +8,7 @@ var DayItem = require('./DayItem');
 import { withStyles } from 'material-ui/styles';
 import Card, { CardHeader, CardMedia, CardContent, CardActions } from 'material-ui/Card';
 import Typography from 'material-ui/Typography';
+import PropTypes from 'prop-types';
 
 const styles = {
     forecastContainer: {
@@ -16,17 +17,28 @@ const styles = {
         wrap: 'wrap',
         width: 1200,
         margin: '50px auto'
-    }
+    }, details: {
+        display: 'flex',
+        flexDirection: 'column',
+    },
+    content: {
+        flex: '1 0 auto',
+    }, card: {
+        display: 'flex',
+    },
 };
+
 
 class Forecast extends Component {
     constructor(props) {
         super(props);
         this.state = {
             forecastData: [],
-            test2: {sys: {
-                
-            }},
+            test2: {
+                sys: {
+
+                }
+            },
             loading: true
         }
         this.makeRequest = this.makeRequest.bind(this);
@@ -87,17 +99,21 @@ class Forecast extends Component {
     }
     render() {
         return this.state.loading === true
-            ? <h1 className='forecast-header'> Loading </h1>
-            : <div>
+            ? <Card>
+                <CardContent>
+                    <h1>test</h1>
+                </CardContent>
+            </Card>
+            : <div style={{ backgroundColor: "#FF0000" }}>
                 <Card>
                     <CardHeader title={this.state.test2.name} subheader={this.state.test2.sys.country}>
                     </CardHeader>
 
-                    <CardContent>
-                        <div className='forecast-container'>
+                    <CardContent className={styles.card}>
+                        <div className={styles.details}>
                             {this.state.forecastData.list.map(function (listItem, i) {
                                 return (
-                                    <div key={i}>
+                                    <div className={styles.content} key={i}>
                                         <DayItem day={listItem} />
                                         <div className='description-container'>
                                             <Typography color="textSecondary">
@@ -123,5 +139,6 @@ class Forecast extends Component {
 
             </div>
     }
+
 }
-export default withStyles(styles)(Forecast);
+export default withStyles(styles, {withTheme: true})(Forecast);

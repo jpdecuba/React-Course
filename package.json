@@ -1,11 +1,11 @@
 {
-  "name": "React_Course",
+  "name": "reactcourse",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "serve": "live-server public/",
-    "build": "webpack --watch",
+    "build": "webpack-dev-server --watch",
     "dev-server": "webpack-dev-server"
   },
   "dependencies": {
@@ -15,7 +15,9 @@
     "babel-loader": "7.1.1",
     "babel-preset-env": "1.5.2",
     "babel-preset-react": "6.24.1",
+    "create-react-app": "^1.5.2",
     "css-loader": "^0.28.11",
+    "express": "^4.16.3",
     "live-server": "^1.2.0",
     "material-ui": "^1.0.0-beta.36",
     "material-ui-icons": "^1.0.0-beta.36",
@@ -27,6 +29,7 @@
     "react-router-dom": "4.2.2",
     "react-scroll-parallax": "^1.3.2",
     "redux": "3.7.2",
+    "serve": "^6.5.5",
     "webpack": "3.1.0",
     "webpack-dev-server": "2.5.1"
   }
