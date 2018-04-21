@@ -6,7 +6,9 @@
   "scripts": {
     "serve": "live-server public/",
     "build": "webpack-dev-server --watch",
-    "dev-server": "webpack-dev-server"
+    "dev-server": "webpack-dev-server",
+    "start": "node server/server.js",
+    "postbuild": "yarn run build:prod"
   },
   "dependencies": {
     "axios": "^0.18.0",
