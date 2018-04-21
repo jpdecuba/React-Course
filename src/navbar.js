@@ -49,7 +49,7 @@ class navbar extends Component {
                     </Typography>
                     <Button component={NavLink} className={classes.button} activeClassName={classes.isActive} to="/" exact={true}>Home</Button>
                     <Button component={NavLink} className={classes.button} activeClassName={classes.isActive} to="/projects">Projects</Button>
-                    <IconButton title="Github" color="inherit" href="https://google.com">
+                    <IconButton title="Github" color="inherit" href="https://github.com/jpdecuba">
                         <GitHubIcon />
                     </IconButton>
                     <IconButton title="WhatsApp" color="inherit" href="https://api.whatsapp.com/send?phone=31636349444">
