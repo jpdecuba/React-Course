@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Dialog from 'material-ui/Dialog';
-import Reboot from 'material-ui/Reboot';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 import Button from 'material-ui/Button';
 import Toolbar from 'material-ui/Toolbar';
@@ -79,7 +78,6 @@ class Main extends Component {
 
     return (
       <MuiThemeProvider theme={theme}>
-        <Reboot />
         <Grid container spacing={0}>
           <Grid item xs={12}>
             <Card className={classes.card}>
