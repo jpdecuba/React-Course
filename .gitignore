@@ -3,7 +3,6 @@ ncp-debug.log
 npm-debug.log
 bower_component
 src/config/configSec.js
-bundle.js
 
 .DS_STORE
 node_modules

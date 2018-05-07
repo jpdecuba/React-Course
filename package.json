@@ -8,7 +8,8 @@
     "build": "webpack-dev-server --watch",
     "dev-server": "webpack-dev-server",
     "start": "node server/server.js",
-    "postbuild": "yarn run build:prod"
+    "postbuild": "yarn run build:prod",
+    "rebuild": "webpack -p --progress"
   },
   "dependencies": {
     "axios": "^0.18.0",
